@@ -1,0 +1,15 @@
+version: '2'
+
+build:
+  context: .
+  args:
+    - KODEXPLORER_VERSION=4.24
+
+services:
+  kodexplorer:
+    image: xaljer/kodexplorer
+    restart: always
+    ports:
+      - '8006:80'
+    volumes:
+      - '/srv/docker/kodexplorer-data:/var/www/html'
